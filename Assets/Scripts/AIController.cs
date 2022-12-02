@@ -12,6 +12,7 @@ public class AIController : MonoBehaviour
     Vector3 nextStagePos;
     int playerteam;
     public int bricktocollect = 0;
+    public Vector3 checkedPos;
     void Start()
     {
         playerteam = GetComponent<CharacterBehavior>().playerteam;
@@ -21,13 +22,14 @@ public class AIController : MonoBehaviour
         nextStagePos = nextStage.transform.position;
         FindBrick();
         GetBrick();
+        
     }
 
-    // Update is called once per frame
+    // SOS
 
     void Update()
     {
-        
+        checkedPos = agent.destination;
     }
     
 
